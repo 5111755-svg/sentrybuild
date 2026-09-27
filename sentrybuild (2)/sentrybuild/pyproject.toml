@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sentrybuild"
+version = "0.1.0"
+description = "Detect supply-chain tampering and unauthorized IFUNC/GOT/PLT hooking in ELF binaries."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "SentryBuild contributors" }]
+keywords = [
+    "security",
+    "supply-chain",
+    "elf",
+    "ifunc",
+    "got",
+    "plt",
+    "binary-analysis",
+    "integrity",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Topic :: Security",
+    "Topic :: Software Development :: Build Tools",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: POSIX :: Linux",
+]
+dependencies = ["pyelftools>=0.29"]
+
+[project.urls]
+Homepage = "https://github.com/your-org/sentrybuild"
+Issues = "https://github.com/your-org/sentrybuild/issues"
+
+[project.scripts]
+sentrybuild = "sentrybuild.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["sentrybuild*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
